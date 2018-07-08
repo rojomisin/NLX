@@ -99,7 +99,7 @@ public:
         pchMessageStart[1] = 0xb4;
         pchMessageStart[2] = 0xbd;
         pchMessageStart[3] = 0xb9;
-        vAlertPubKey = ParseHex("02997a00d5d995dfdd05854fa5d5ee5a6b0faecafb458305d283c5ed42d342ee67");
+        vAlertPubKey = ParseHex("037e7b3d2d153973d6280de27107f1401413f9a06fa6460edaf852d40985e8258b");
         nDefaultPort = 43879;
         bnProofOfWorkLimit = ~uint256(0) >> 20; 
         nSubsidyHalvingInterval = 210000;
@@ -115,7 +115,7 @@ public:
         nMaxMoneyOut = 10000000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100000;
+	nLastPOWBlock = 20001;
         nModifierUpdateBlock = 1;
         nZerocoinStartHeight = 3000000;
         nZerocoinStartTime = 1556602933; 
@@ -124,8 +124,9 @@ public:
         nBlockFirstFraudulent = 891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 902850; //Start enforcing the invalid UTXO's
-
-        const char* pszTimestamp = "Bitcoin Price Manipulation investigated MAY 2018 - The New Nullex Arrives";
+        
+	
+	const char* pszTimestamp = "Bitcoin Price Manipulation investigated June 2018 - The New Nullex Arrives";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -136,13 +137,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1527517821;
+        genesis.nTime = 1530814136;
         genesis.nBits = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 1016193;
+        genesis.nNonce = 1082528;
         hashGenesisBlock = genesis.GetHash();
         
-        assert(hashGenesisBlock == uint256("0x00000e82dfcaf99407ea5eac2a7008d75f4e4d715f51fab19b21e06094d7c345"));
-        assert(genesis.hashMerkleRoot == uint256("0xf28c9b1a7c19cc3f1a2bc3df356915c6ffd3f76baba0082d858f9832d6d34b55"));
+        assert(hashGenesisBlock == uint256("0x000006cacaa033d02e73700344ec669171a2fa30cf310861cf46f8d92641450a"));
+        assert(genesis.hashMerkleRoot == uint256("0x3bcd33b7d38538c060ba28f02dc983e364bb7b84303b505c216c2c0fb935568e"));
        
         vSeeds.push_back(CDNSSeedData("NullexCoreSeed1", "172.81.180.113"));
         vSeeds.push_back(CDNSSeedData("NullexCoreSeed2", "172.81.182.175"));
@@ -172,8 +173,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "02997a00d5d995dfdd05854fa5d5ee5a6b0faecafb458305d283c5ed42d342ee67";
-        strObfuscationPoolDummyAddress = "A87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
+        strSporkKey = "037e7b3d2d153973d6280de27107f1401413f9a06fa6460edaf852d40985e8258b";
+        strObfuscationPoolDummyAddress = "AdHqNDG3dTf6b8R3UHc3BAUdX6R1J8nBRV";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
