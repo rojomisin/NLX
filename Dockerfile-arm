@@ -22,7 +22,7 @@ WORKDIR /mnt/
 
 RUN ./autogen.sh
 RUN ./configure --with-libressl
-RUN make 
+RUN make HOST=aarch64-linux-gnu
 
 RUN cp /mnt/src/nullex* /usr/local/bin/
 RUN cp /mnt/src/qt/nullex-qt /usr/local/bin/
